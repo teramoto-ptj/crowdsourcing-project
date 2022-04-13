@@ -6,6 +6,10 @@ import lombok.Value;
 
 @Value
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
-public class DueDate {
-    
+public class JobOffer {
+
+    // 新規案件
+    NewJobOffer newJobOffer;
+    // AND 案件ID
+    JobOfferID jobOfferID;
 }

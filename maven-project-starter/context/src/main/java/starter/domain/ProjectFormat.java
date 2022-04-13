@@ -6,6 +6,11 @@ import lombok.Value;
 
 @Value
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
-public class DueDate {
+
+public class ProjectFormat {
     
+    // 見積金額
+    QuotationAmount quotationAmount;
+    // 完了予定日
+    ScheduledCompletionDate scheduledCompletionDate;
 }

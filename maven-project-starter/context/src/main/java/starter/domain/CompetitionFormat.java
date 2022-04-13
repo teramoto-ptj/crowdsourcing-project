@@ -6,6 +6,10 @@ import lombok.Value;
 
 @Value
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
-public class DueDate {
+
+public class CompetitionFormat {
+    
+    // ファイル
+    File file;
     
 }

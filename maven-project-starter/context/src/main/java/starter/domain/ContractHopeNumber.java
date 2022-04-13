@@ -15,4 +15,11 @@ public class ContractHopeNumber {
     
     int  value;
     
+    public static ContractHopeNumber of(int value) {
+        return validator.validated(value);
+    }
+
+    public int asint() {
+        return value;
+    }
 }
