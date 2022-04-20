@@ -6,14 +6,15 @@ import lombok.Value;
 
 @Value
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
-public class JobOffer {
-
-    // 新規案件
-    NewJobOffer newJobOffer;
-    // AND 案件ID
+public class Apply {
+    // 新規応募
+    NewApply newApply;
+    // 案件ID
     JobOfferID jobOfferID;
+    // 応募ID
+    ApplyID applyID;
     
-    public static JobOffer of(JobOffer jobOffer) {
+    public static Apply of(Apply apply) {
         return null;
     }
 }

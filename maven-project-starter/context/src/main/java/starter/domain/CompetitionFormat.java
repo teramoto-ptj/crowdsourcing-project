@@ -11,5 +11,10 @@ public class CompetitionFormat {
     
     // ファイル
     File file;
+    // メッセージ
+    Message message;
     
+    public static CompetitionFormat of(File file, Message message) {
+    return new CompetitionFormat(file, message);
+    }
 }

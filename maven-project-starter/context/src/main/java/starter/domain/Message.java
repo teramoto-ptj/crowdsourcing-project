@@ -8,20 +8,18 @@ import lombok.Value;
 
 @Value
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
-
 public class Message {
-    public static final StringValidator<Description> validator = StringValidatorBuilder
+    public static final StringValidator<Message> validator = StringValidatorBuilder
     .of("message", c -> c.notBlank().greaterThanOrEqual(1).lessThanOrEqual(2000))
     .build().andThen(Message::new);
 
-String value;
+    String value;
 
-public static Message of(String value) {
-return validator.validated(value);
-}
+    public static Message of(String value) {
+    return validator.validated(value);
+    }
 
-public String asString() {
-return value;
-}
-}
+    public String asString() {
+    return value;
+    }
 }

@@ -13,4 +13,11 @@ public class ProjectFormat {
     QuotationAmount quotationAmount;
     // 完了予定日
     ScheduledCompletionDate scheduledCompletionDate;
+    // メッセージ
+    Message message;
+
+    public static ProjectFormat of(QuotationAmount quotationAmount, 
+                                    ScheduledCompletionDate scheduledCompletionDate, Message message) {
+        return new ProjectFormat(quotationAmount, scheduledCompletionDate, message);
+    }
 }
