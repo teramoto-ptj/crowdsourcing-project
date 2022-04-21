@@ -17,16 +17,16 @@ class CreateApplyUseCaseImpl implements CreateApplyUseCase {
 
     @Override
     public CreatedApplyEvent handle(CreateApplyCommand command) {
-        NewApply newApply = NewApply.of(
-        CompetitionFormat.of(
+        NewApply newApply = CompetitionNewApply.of(
                 File.of(command.getFile()),
                 Message.of(command.getMessage())
-        ),
+        );
+
         ProjectFormat.of(
                 QuotationAmount.of(command.getQuotationAmount(), Monetary.getCurrency("JPY")),
                 ScheduledCompletionDate.of(command.getScheduledCompletionDate()),
                 Message.of(command.getMessage())
-        ));
+        );
         saveaApplyPort.save(newApply);
         return new CreatedApplyEvent();
     }

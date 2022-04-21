@@ -16,7 +16,7 @@ public class PassNotificationUseCaseImpl implements PassNotificationUseCase {
     @Override
     public PassNotificationEvent handle(PassNotificationView view) {
         PassNotification passNotification = PassNotification.of(
-                JobOffer.of(view.getJobOffer()),
+                view.getJobOffer(),
                 Apply.of(view.getApply()),
                 PassNotificationMassage.of(view.getPassNotificationMassage())
         );

@@ -21,6 +21,7 @@ public interface CreateJobOfferUseCase {
 
     @Value
     class CreatedJobOfferEvent {
+        String jobOfferId;
     }
 
 }

@@ -16,7 +16,7 @@ public class FailNotificationUseCaseImpl implements FailNotificationUseCase {
     @Override
     public FailNotificationEvent handle(FailNotificationView view) {
         FailNotification failNotification = FailNotification.of(
-                JobOffer.of(view.getJobOffer()),
+                view.getJobOffer(),
                 Apply.of(view.getApply()),
                 FailNotificationMassage.of(view.getFailNotificationMassage())
         );

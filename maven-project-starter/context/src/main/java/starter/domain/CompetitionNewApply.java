@@ -6,15 +6,13 @@ import lombok.Value;
 
 @Value
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
-
-public class CompetitionFormat {
-    
+public class CompetitionNewApply extends NewApply {
     // ファイル
     File file;
     // メッセージ
     Message message;
-    
-    public static CompetitionFormat of(File file, Message message) {
-    return new CompetitionFormat(file, message);
+
+    public static CompetitionNewApply of(File file, Message message) {
+    return new CompetitionNewApply(file, message);
     }
 }

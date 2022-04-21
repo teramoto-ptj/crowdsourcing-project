@@ -17,7 +17,8 @@ class CreateJobOfferUseCaseImpl implements CreateJobOfferUseCase {
 
     @Override
     public CreatedJobOfferEvent handle(CreateJobOfferCommand command) {
-        NewJobOffer newJobOffer = NewJobOffer.of(
+        JobOffer newJobOffer = JobOffer.of(
+                new JobOfferID(),
                 Title.of(command.getTitle()),
                 Description.of(command.getDescription()),
                 RequiredSkill.of(command.getRequiredSkill()),
@@ -27,6 +28,6 @@ class CreateJobOfferUseCaseImpl implements CreateJobOfferUseCase {
                 DueDate.of(command.getDueDate())
         );
         saveJobOfferPort.save(newJobOffer);
-        return new CreatedJobOfferEvent();
+        return new CreatedJobOfferEvent(newJobOffer.getJobOfferID().asString());
     }
 }

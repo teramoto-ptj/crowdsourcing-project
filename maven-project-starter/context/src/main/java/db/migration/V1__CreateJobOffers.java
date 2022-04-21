@@ -27,7 +27,7 @@ public class V1__CreateJobOffers extends BaseJavaMigration {
                 .column("budget_amount", DECIMAL(10,2).nullable(false))
                 .column("budget_currency", VARCHAR.length(3).nullable(false))
                 .column("contract_hope_number", INTEGER.nullable(false))
-                .column("job_offer_type", VARCHAR.length(10).nullable(false))
+                .column("job_offer_type", VARCHAR.length(11).nullable(false))
                 .column("due_date", DATE.nullable(false))
                 .getSQL());
     }
