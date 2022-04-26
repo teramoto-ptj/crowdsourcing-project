@@ -1,11 +1,11 @@
 package starter.domain;
 
 import com.aventrix.jnanoid.jnanoid.NanoIdUtils;
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
+// import lombok.AccessLevel;
+// import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
-import lombok.Value;
-import org.springframework.boot.autoconfigure.batch.BatchProperties;
+// import lombok.Value;
+// import org.springframework.boot.autoconfigure.batch.BatchProperties;
 
 @EqualsAndHashCode
 public class JobOfferID {

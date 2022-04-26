@@ -1,7 +1,7 @@
-package starter.application;
+// package starter.application;
 
-import starter.domain.*;
+// import starter.domain.*;
 
-public interface SaveFailNotificationPort {
-    void save(FailNotification failNotification);
-}
+// public interface SaveFailNotificationPort {
+//     void save(FailNotification failNotification);
+// }

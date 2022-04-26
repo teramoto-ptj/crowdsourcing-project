@@ -3,5 +3,6 @@ package starter.application;
 import starter.domain.*;
 
 public interface SaveApplyPort {
-    void save(NewApply newApply); 
+    void save(CompetitionNewApply newApply);
+    void save(ProjectNewApply newApply);
 }

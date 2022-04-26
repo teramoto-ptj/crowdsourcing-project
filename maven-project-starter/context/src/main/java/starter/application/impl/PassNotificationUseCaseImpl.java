@@ -1,26 +1,26 @@
-package starter.application.impl;
+// package starter.application.impl;
 
-import org.springframework.stereotype.Component;
-import starter.application.PassNotificationUseCase;
-import starter.application.SavePassNotificationPort;
-import starter.domain.*;
+// import org.springframework.stereotype.Component;
+// import starter.application.PassNotificationUseCase;
+// import starter.application.SavePassNotificationPort;
+// import starter.domain.*;
 
-@Component
-public class PassNotificationUseCaseImpl implements PassNotificationUseCase {
-    private final SavePassNotificationPort savePassNotificationPort;
+// @Component
+// public class PassNotificationUseCaseImpl implements PassNotificationUseCase {
+//     private final SavePassNotificationPort savePassNotificationPort;
 
-    PassNotificationUseCaseImpl(SavePassNotificationPort savePassNotificationPort) {
-        this.savePassNotificationPort = savePassNotificationPort;
-    }
+//     PassNotificationUseCaseImpl(SavePassNotificationPort savePassNotificationPort) {
+//         this.savePassNotificationPort = savePassNotificationPort;
+//     }
 
-    @Override
-    public PassNotificationEvent handle(PassNotificationView view) {
-        PassNotification passNotification = PassNotification.of(
-                view.getJobOffer(),
-                Apply.of(view.getApply()),
-                PassNotificationMassage.of(view.getPassNotificationMassage())
-        );
-        savePassNotificationPort.save(passNotification);
-        return new PassNotificationEvent();
-    }
-}
+//     @Override
+//     public PassNotificationEvent handle(PassNotificationView view) {
+//         PassNotification passNotification = PassNotification.of(
+//                 view.getJobOffer(),
+//                 Apply.of(view.getApply()),
+//                 PassNotificationMassage.of(view.getPassNotificationMassage())
+//         );
+//         savePassNotificationPort.save(passNotification);
+//         return new PassNotificationEvent();
+//     }
+// }

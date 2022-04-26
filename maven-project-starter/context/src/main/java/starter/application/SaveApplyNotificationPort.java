@@ -1,7 +1,7 @@
-package starter.application;
+// package starter.application;
 
-import starter.domain.*;
+// import starter.domain.*;
 
-public interface SaveApplyNotificationPort {
-    void save(ApplyNotification applyNotification);
-}
+// public interface SaveApplyNotificationPort {
+//     void save(ApplyNotification applyNotification);
+// }

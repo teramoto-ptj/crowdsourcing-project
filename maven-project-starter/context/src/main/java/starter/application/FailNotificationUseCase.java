@@ -1,19 +1,19 @@
-package starter.application;
+// package starter.application;
 
-import lombok.Value;
-import starter.domain.*;
+// import lombok.Value;
+// import starter.domain.*;
 
-public interface FailNotificationUseCase {
-    FailNotificationEvent handle(FailNotificationView view);
+// public interface FailNotificationUseCase {
+//     FailNotificationEvent handle(FailNotificationView view);
 
-    @Value
-    class FailNotificationView {
-        JobOffer jobOffer;
-        Apply apply;
-        String failNotificationMassage;
-    }
+//     @Value
+//     class FailNotificationView {
+//         JobOffer jobOffer;
+//         Apply apply;
+//         String failNotificationMassage;
+//     }
 
-    @Value
-    class FailNotificationEvent {
-    }
-}
+//     @Value
+//     class FailNotificationEvent {
+//     }
+// }

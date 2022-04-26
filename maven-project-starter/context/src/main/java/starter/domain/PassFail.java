@@ -1,6 +1,6 @@
-package starter.domain;
+// package starter.domain;
 
-public enum PassFail {
-    Pass,
-    Fail
-}
+// public enum PassFail {
+//     Pass,
+//     Fail
+// }

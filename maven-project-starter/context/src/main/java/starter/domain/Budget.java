@@ -3,7 +3,7 @@ package starter.domain;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
-import lombok.Value;
+// import lombok.Value;
 import org.javamoney.moneta.Money;
 
 import javax.money.CurrencyUnit;

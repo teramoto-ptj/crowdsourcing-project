@@ -11,5 +11,9 @@ public class File {
     public static File of(java.io.File file) {
         return null;
     }
+
+    public Object asFile() {
+        return null;
+    }
     
 }

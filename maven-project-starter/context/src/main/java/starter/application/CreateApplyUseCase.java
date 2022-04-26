@@ -11,6 +11,7 @@ public interface CreateApplyUseCase {
 
     @Value
     class CreateApplyCommand {
+        String jobOfferType;
         File file;
         BigDecimal quotationAmount;
         LocalDate scheduledCompletionDate;
@@ -19,5 +20,6 @@ public interface CreateApplyUseCase {
 
     @Value
     class CreatedApplyEvent {
+        String applyID;
     }
 }

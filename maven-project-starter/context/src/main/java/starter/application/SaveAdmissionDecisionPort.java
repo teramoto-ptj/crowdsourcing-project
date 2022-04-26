@@ -1,7 +1,7 @@
-package starter.application;
+// package starter.application;
 
-import starter.domain.*;
+// import starter.domain.*;
 
-public interface SaveAdmissionDecisionPort {
-        void save(AdmissionDecision admissionDecision);
-}
+// public interface SaveAdmissionDecisionPort {
+//         void save(AdmissionDecision admissionDecision);
+// }

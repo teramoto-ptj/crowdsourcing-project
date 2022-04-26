@@ -1,7 +1,7 @@
-package starter.application;
+// package starter.application;
 
-import starter.domain.*;
+// import starter.domain.*;
 
-public interface SavePassNotificationPort {
-    void save(PassNotification passNotification);
-}
+// public interface SavePassNotificationPort {
+//     void save(PassNotification passNotification);
+// }

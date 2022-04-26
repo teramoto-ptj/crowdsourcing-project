@@ -5,7 +5,7 @@ import am.ik.yavi.builder.StringValidatorBuilder;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
-import lombok.Value;
+// import lombok.Value;
 
 @EqualsAndHashCode
 @AllArgsConstructor(access = AccessLevel.PRIVATE)

@@ -17,17 +17,28 @@ class CreateApplyUseCaseImpl implements CreateApplyUseCase {
 
     @Override
     public CreatedApplyEvent handle(CreateApplyCommand command) {
-        NewApply newApply = CompetitionNewApply.of(
+        if(String.valueOf(command.getJobOfferType()) == "COMPETITION"){
+        // if(File.of(command.getFile()) != null){
+                CompetitionNewApply newApply = CompetitionNewApply.of(
+                new JobOfferID(),
+                new ApplyID(),
                 File.of(command.getFile()),
                 Message.of(command.getMessage())
-        );
-
-        ProjectFormat.of(
+            );
+            saveaApplyPort.save(newApply);
+            return new CreatedApplyEvent(newApply.getApplyID().asString());
+        }else if(String.valueOf(command.getJobOfferType()) == "PROJECT"){
+        // }else if(ScheduledCompletionDate.of(command.getScheduledCompletionDate()) != null){
+            ProjectNewApply newApply = ProjectNewApply.of(
+                new JobOfferID(),
+                new ApplyID(),
                 QuotationAmount.of(command.getQuotationAmount(), Monetary.getCurrency("JPY")),
                 ScheduledCompletionDate.of(command.getScheduledCompletionDate()),
                 Message.of(command.getMessage())
-        );
-        saveaApplyPort.save(newApply);
-        return new CreatedApplyEvent();
+            );
+            saveaApplyPort.save(newApply);
+            return new CreatedApplyEvent(newApply.getApplyID().asString());
+        }
+        return null;
     }
 }
