@@ -30,7 +30,8 @@ public class ApplyPersistenceAdapter implements SaveApplyPort {
         context.insertInto(COMPETITION_APPLY)
                 .set(COMPETITION_APPLY.JOB_OFFER_ID, newApply.getJobOfferID().asString())
                 .set(COMPETITION_APPLY.APPLY_ID, newApply.getApplyID().asString())
-                .set(COMPETITION_APPLY.FILE, newApply.getFile().asFile())
+                .set(COMPETITION_APPLY.FILE_NAME, newApply.getFile().getName())
+                // .set(COMPETITION_APPLY.FILE_BODY, newApply.getFile().getBody())
                 .set(COMPETITION_APPLY.MESSAGE, newApply.getMessage().asString())
                 .execute();
 }

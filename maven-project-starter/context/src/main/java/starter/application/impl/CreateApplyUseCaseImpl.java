@@ -18,11 +18,11 @@ class CreateApplyUseCaseImpl implements CreateApplyUseCase {
     @Override
     public CreatedApplyEvent handle(CreateApplyCommand command) {
         // if(String.valueOf(command.getJobOfferType()) == "COMPETITION"){
-        if(File.of(command.getFile()) != null){
+        if(AttachmentFile.of(command.getFile()) != null){
                 CompetitionNewApply newApply = CompetitionNewApply.of(
                 new JobOfferID(),
                 new ApplyID(),
-                File.of(command.getFile()),
+                AttachmentFile.of(command.getFile()),
                 Message.of(command.getMessage())
             );
             saveaApplyPort.save(newApply);

@@ -12,11 +12,11 @@ public class CompetitionNewApply{
     // 応募ID
     ApplyID applyID;
     // ファイル
-    File file;
+    AttachmentFile file;
     // メッセージ
     Message message;
 
-    public static CompetitionNewApply of(JobOfferID jobOfferID, ApplyID applyID, File file, Message message) {
+    public static CompetitionNewApply of(JobOfferID jobOfferID, ApplyID applyID, AttachmentFile file, Message message) {
     return new CompetitionNewApply(jobOfferID, applyID, file, message);
     }
 }
