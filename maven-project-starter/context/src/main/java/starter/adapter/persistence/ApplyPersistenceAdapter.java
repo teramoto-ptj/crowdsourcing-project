@@ -26,7 +26,8 @@ public class ApplyPersistenceAdapter implements SaveApplyPort {
     
     @Override
     public void save(CompetitionNewApply newApply) {
-        context.insertInto(CompetitionApply.COMPETITION_APPLY)
+        // TODO Auto-generated method stub
+        context.insertInto(COMPETITION_APPLY)
                 .set(COMPETITION_APPLY.JOB_OFFER_ID, newApply.getJobOfferID().asString())
                 .set(COMPETITION_APPLY.APPLY_ID, newApply.getApplyID().asString())
                 .set(COMPETITION_APPLY.FILE, newApply.getFile().asFile())
@@ -36,7 +37,8 @@ public class ApplyPersistenceAdapter implements SaveApplyPort {
 
     @Override
     public void save(ProjectNewApply newApply) {
-        context.insertInto(ProjectApply.PROJECT_APPLY)
+        // TODO Auto-generated method stub
+        context.insertInto(PROJECT_APPLY)
                 .set(PROJECT_APPLY.JOB_OFFER_ID, newApply.getJobOfferID().asString())
                 .set(PROJECT_APPLY.APPLY_ID, newApply.getApplyID().asString())
                 .set(PROJECT_APPLY.QUOTATION_AMOUNT, newApply.getQuotationAmount().asMonetary().getNumber().numberValueExact(BigDecimal.class))
