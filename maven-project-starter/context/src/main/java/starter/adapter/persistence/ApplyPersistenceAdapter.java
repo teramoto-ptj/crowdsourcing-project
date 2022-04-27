@@ -11,8 +11,8 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
-import static starter.adapter.persistence.tables.CompetitionNewApply.COMPETITON_NEW_APPLY;
-import static starter.adapter.persistence.tables.ProjectNewApply.PROJECT_NEW_APPLY;
+import static starter.adapter.persistence.tables.CompetitionApply.COMPETITION_APPLY;
+import static starter.adapter.persistence.tables.ProjectApply.PROJECT_APPLY;
 
 @Component
 public class ApplyPersistenceAdapter implements SaveApplyPort {
@@ -25,23 +25,23 @@ public class ApplyPersistenceAdapter implements SaveApplyPort {
     @Override
     public void save(CompetitionNewApply newApply) {
         // TODO Auto-generated method stub
-        context.insertInto(CompetitionNewApply.COMPETITON_NEW_APPLY)
-                .set(COMPETITON_NEW_APPLY.JOB_OFFER_ID, CompetitionNewApply.getJobOfferID().asString())
-                .set(COMPETITON_NEW_APPLY.APPLY_ID, CompetitionNewApply.getApplyID().asString())
-                .set(COMPETITON_NEW_APPLY.DESCRIPTION, CompetitionNewApply.getFile().asFile())
-                .set(COMPETITON_NEW_APPLY.MESSAGE, CompetitionNewApply.getMessage().asString())
+        context.insertInto(COMPETITION_APPLY)
+                .set(COMPETITION_APPLY.JOB_OFFER_ID, newApply.getJobOfferID().asString())
+                .set(COMPETITION_APPLY.APPLY_ID, newApply.getApplyID().asString())
+                .set(COMPETITION_APPLY.FILE, newApply.getFile().asFile())
+                .set(COMPETITION_APPLY.MESSAGE, newApply.getMessage().asString())
                 .execute();
 }
 
     @Override
     public void save(ProjectNewApply newApply) {
         // TODO Auto-generated method stub
-        context.insertInto(PROJECT_NEW_APPLY)
-                .set(PROJECT_NEW_APPLY.JOB_OFFER_ID, ProjectNewApply.getJobOfferID().asString())
-                .set(PROJECT_NEW_APPLY.APPLY_ID, ProjectNewApply.getApplyID().asString())
-                .set(PROJECT_NEW_APPLY.QUOTATION_AMOUNT, ProjectNewApply.getQuotationAmount().asMonetary().getNumber().numberValueExact(BigDecimal.class))
-                .set(PROJECT_NEW_APPLY.SCHEDULED_COMPLETION_DATE, ProjectNewApply.getScheduledCompletionDate().asDate())
-                .set(PROJECT_NEW_APPLY.MESSAGE, ProjectNewApply.getMessage().asString())
+        context.insertInto(PROJECT_APPLY)
+                .set(PROJECT_APPLY.JOB_OFFER_ID, newApply.getJobOfferID().asString())
+                .set(PROJECT_APPLY.APPLY_ID, newApply.getApplyID().asString())
+                .set(PROJECT_APPLY.QUOTATION_AMOUNT, newApply.getQuotationAmount().asMonetary().getNumber().numberValueExact(BigDecimal.class))
+                .set(PROJECT_APPLY.SCHEDULED_COMPLETION_DATE, newApply.getScheduledCompletionDate().asDate())
+                .set(PROJECT_APPLY.MESSAGE, newApply.getMessage().asString())
                 .execute();
     }
     

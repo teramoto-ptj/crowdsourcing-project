@@ -28,7 +28,7 @@
                         <phase>generate-sources</phase>
                         <configuration>
                             <includes>
-                                <include>db/migration</include>
+                                <include>db/migration/*.java</include>
                             </includes>
                         </configuration>
                     </execution>
