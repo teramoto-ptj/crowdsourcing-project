@@ -31,7 +31,7 @@ class CreateApplyUseCaseImplTest {
         sut = new CreateApplyUseCaseImpl(saveApplyPort);
     }
     @Test
-    void test() {
+    void testCompetition() {
         CreatedApplyEvent event = sut.handle(new CreateApplyCommand(
                 // "PROJECT",
                 null,
@@ -40,8 +40,10 @@ class CreateApplyUseCaseImplTest {
                 null
         ));
         verify(saveApplyPort).save(any(CompetitionNewApply.class));
-        @Test
-        void test() {
+    }
+
+    @Test
+    void testProject() {
             CreatedApplyEvent event = sut.handle(new CreateApplyCommand(
                     // "PROJECT",
                     null,

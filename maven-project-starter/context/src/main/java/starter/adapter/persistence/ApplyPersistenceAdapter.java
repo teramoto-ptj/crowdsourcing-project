@@ -34,7 +34,7 @@ public class ApplyPersistenceAdapter implements SaveApplyPort {
                 // .set(COMPETITION_APPLY.FILE_BODY, newApply.getFile().getBody())
                 .set(COMPETITION_APPLY.MESSAGE, newApply.getMessage().asString())
                 .execute();
-}
+    }
 
     @Override
     public void save(ProjectNewApply newApply) {
