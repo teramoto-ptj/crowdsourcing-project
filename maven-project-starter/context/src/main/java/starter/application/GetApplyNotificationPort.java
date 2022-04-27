@@ -2,6 +2,6 @@
 
 // import starter.domain.*;
 
-// public interface SaveApplyNotificationPort {
+// public interface GetApplyNotificationPort {
 //     void save(ApplyNotification applyNotification);
 // }

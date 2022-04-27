@@ -1,18 +1,17 @@
-// package starter.application;
+package starter.application;
 
-// import lombok.Value;
-// import starter.domain.*;
+import lombok.Value;
+import starter.domain.*;
 
-// public interface ApplyNotificationUseCase {
-//     ApplyNotificationEvent handle(ApplyNotificationView view);
+public interface ApplyNotificationUseCase {
+    ApplyNotificationView handle(ApplyNotificationEvent event);
 
-//     @Value
-//     class ApplyNotificationView {
-//         Apply apply;
-//         String applyNotificationMassage;
-//     }
+    @Value
+    class ApplyNotificationEvent {
+        ApplyID applyID;
+    }
 
-//     @Value
-//     class ApplyNotificationEvent {
-//     }
-// }
+    @Value
+    class ApplyNotificationView {
+    }
+}

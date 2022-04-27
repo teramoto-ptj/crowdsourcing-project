@@ -13,9 +13,13 @@ import java.math.BigDecimal;
 @EqualsAndHashCode
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 public class QuotationAmount {
-    MonetaryAmount value;
+    private MonetaryAmount value;
 
     public static QuotationAmount of(BigDecimal value, CurrencyUnit currencyUnit) {
         return new QuotationAmount(Money.of(value, currencyUnit));
+    }
+
+    public MonetaryAmount asMonetary() {
+        return this.value;
     }
 }

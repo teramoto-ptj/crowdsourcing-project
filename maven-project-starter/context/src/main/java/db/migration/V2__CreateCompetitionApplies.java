@@ -22,7 +22,7 @@ public class V2__CreateCompetitionApplies extends BaseJavaMigration {
         execute(conn, DSL.createTable("competition_apply")
                 .column("job_offer_id", VARCHAR.length(21).nullable(false))
                 .column("apply_id", VARCHAR.length(21).nullable(false))
-                .column("file", VARCHAR.length(200).nullable(false))
+                .column("file", VARCHAR.length(1024*1024).nullable(false))
                 .column("message", VARCHAR.length(2000).nullable(true))
                 .getSQL());
     }

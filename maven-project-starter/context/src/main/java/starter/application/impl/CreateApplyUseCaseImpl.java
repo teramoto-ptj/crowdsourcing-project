@@ -17,8 +17,8 @@ class CreateApplyUseCaseImpl implements CreateApplyUseCase {
 
     @Override
     public CreatedApplyEvent handle(CreateApplyCommand command) {
-        if(String.valueOf(command.getJobOfferType()) == "COMPETITION"){
-        // if(File.of(command.getFile()) != null){
+        // if(String.valueOf(command.getJobOfferType()) == "COMPETITION"){
+        if(File.of(command.getFile()) != null){
                 CompetitionNewApply newApply = CompetitionNewApply.of(
                 new JobOfferID(),
                 new ApplyID(),
@@ -27,8 +27,8 @@ class CreateApplyUseCaseImpl implements CreateApplyUseCase {
             );
             saveaApplyPort.save(newApply);
             return new CreatedApplyEvent(newApply.getApplyID().asString());
-        }else if(String.valueOf(command.getJobOfferType()) == "PROJECT"){
-        // }else if(ScheduledCompletionDate.of(command.getScheduledCompletionDate()) != null){
+        // }else if(String.valueOf(command.getJobOfferType()) == "PROJECT"){
+        }else if(ScheduledCompletionDate.of(command.getScheduledCompletionDate()) != null){
             ProjectNewApply newApply = ProjectNewApply.of(
                 new JobOfferID(),
                 new ApplyID(),

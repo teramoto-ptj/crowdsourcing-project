@@ -8,11 +8,9 @@
 // @AllArgsConstructor(access = AccessLevel.PRIVATE)
 // public class ApplyNotification {
 //     // 応募
-//     Apply apply;
-//     // 応募通知メッセージ
-//     ApplyNotificationMassage applyNotificationMassage;
+//     ApplyID applyID;
 
-//     public static ApplyNotification of(Apply apply, ApplyNotificationMassage applyNotificationMassage) {
-//         return new ApplyNotification(apply, applyNotificationMassage);
+//     public static ApplyNotification of(ApplyID applyID) {
+//         return new ApplyNotification(applyID);
 //     }
 // }

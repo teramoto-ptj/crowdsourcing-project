@@ -30,7 +30,7 @@ class CreateApplyUseCaseImplTest {
     @Test
     void test() {
         CreatedApplyEvent event = sut.handle(new CreateApplyCommand(
-                "PROJECT",
+                // "PROJECT",
                 null,
                 new BigDecimal("100000"),
                 LocalDate.now().plusDays(5),

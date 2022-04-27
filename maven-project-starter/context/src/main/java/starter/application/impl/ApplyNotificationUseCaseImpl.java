@@ -2,24 +2,23 @@
 
 // import org.springframework.stereotype.Component;
 // import starter.application.ApplyNotificationUseCase;
-// import starter.application.SaveApplyNotificationPort;
+// import starter.application.GetApplyNotificationPort;
 // import starter.domain.*;
 
 // @Component
 // public class ApplyNotificationUseCaseImpl implements ApplyNotificationUseCase {
-//     public final SaveApplyNotificationPort saveApplyNotificationPort;
+//     public final GetApplyNotificationPort getApplyNotificationPort;
 
-//     ApplyNotificationUseCaseImpl(SaveApplyNotificationPort saveApplyNotificationPort){
-//         this.saveApplyNotificationPort = saveApplyNotificationPort;
+//     ApplyNotificationUseCaseImpl(GetApplyNotificationPort getApplyNotificationPort){
+//         this.getApplyNotificationPort = getApplyNotificationPort;
 //     }
 
 //     @Override
-//     public ApplyNotificationEvent handle(ApplyNotificationView view) {
+//     public ApplyNotificationView handle(ApplyNotificationEvent event) {
 //         ApplyNotification applyNotification = ApplyNotification.of(
-//                 Apply.of(view.getApply()), 
-//                 ApplyNotificationMassage.of(view.getApplyNotificationMassage())
+//                 ApplyID.of(event.getApplyID())
 //         );
-//         saveApplyNotificationPort.save(applyNotification);
-//         return new ApplyNotificationEvent();
+//         getApplyNotificationPort.save(applyNotification);
+//         return new ApplyNotificationView();
 //     }
 // }
