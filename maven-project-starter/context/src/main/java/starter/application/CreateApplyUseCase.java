@@ -11,7 +11,7 @@ public interface CreateApplyUseCase {
 
     @Value
     class CreateApplyCommand {
-        // String jobOfferType;
+        String jobOfferType;
         File file;
         BigDecimal quotationAmount;
         LocalDate scheduledCompletionDate;

@@ -1,9 +1,13 @@
 package starter.application.impl;
 
+import org.apache.logging.log4j.message.MapMessage;
 import org.springframework.stereotype.Component;
 import starter.application.CreateApplyUseCase;
 import starter.application.SaveApplyPort;
 import starter.domain.*;
+
+import java.util.Objects;
+import java.util.Optional;
 
 import javax.money.Monetary;
 
@@ -17,24 +21,22 @@ class CreateApplyUseCaseImpl implements CreateApplyUseCase {
 
     @Override
     public CreatedApplyEvent handle(CreateApplyCommand command) {
-        // if(String.valueOf(command.getJobOfferType()) == "COMPETITION"){
-        if(AttachmentFile.of(command.getFile()) != null){
+        if(Objects.equals(command.getJobOfferType(), "COMPETITION")){
                 CompetitionNewApply newApply = CompetitionNewApply.of(
                 new JobOfferID(),
                 new ApplyID(),
                 AttachmentFile.of(command.getFile()),
-                Message.of(command.getMessage())
+                Optional.ofNullable(command.getMessage()).map(Message::of).orElse(null)
             );
             saveaApplyPort.save(newApply);
             return new CreatedApplyEvent(newApply.getApplyID().asString());
-        // }else if(String.valueOf(command.getJobOfferType()) == "PROJECT"){
-        }else if(ScheduledCompletionDate.of(command.getScheduledCompletionDate()) != null){
+        }else if(Objects.equals(command.getJobOfferType(),"PROJECT")){
             ProjectNewApply newApply = ProjectNewApply.of(
                 new JobOfferID(),
                 new ApplyID(),
                 QuotationAmount.of(command.getQuotationAmount(), Monetary.getCurrency("JPY")),
                 ScheduledCompletionDate.of(command.getScheduledCompletionDate()),
-                Message.of(command.getMessage())
+                Optional.ofNullable(command.getMessage()).map(Message::of).orElse(null)
             );
             saveaApplyPort.save(newApply);
             return new CreatedApplyEvent(newApply.getApplyID().asString());

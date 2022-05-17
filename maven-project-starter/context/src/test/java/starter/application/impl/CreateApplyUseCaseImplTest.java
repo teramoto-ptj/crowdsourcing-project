@@ -11,6 +11,7 @@ import starter.application.CreateApplyUseCase.CreatedApplyEvent;
 import starter.domain.*;
 import starter.application.SaveApplyPort;
 
+import java.io.File;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
@@ -33,19 +34,20 @@ class CreateApplyUseCaseImplTest {
     @Test
     void testCompetition() {
         CreatedApplyEvent event = sut.handle(new CreateApplyCommand(
-                // "PROJECT",
+                "COMPETITION",
+                new File("asd"),
                 null,
-                new BigDecimal("100000"),
-                LocalDate.now().plusDays(5),
-                null
+                null,
+                "asd"
         ));
         verify(saveApplyPort).save(any(CompetitionNewApply.class));
+        assertThat(event).isNotNull();
     }
 
     @Test
     void testProject() {
             CreatedApplyEvent event = sut.handle(new CreateApplyCommand(
-                    // "PROJECT",
+                    "PROJECT",
                     null,
                     new BigDecimal("100000"),
                     LocalDate.now().plusDays(5),
